@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp13.MainPage"
+             Title="MAUI 16.2">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Rejestracja!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+            <Entry
+                Placeholder="Imię"
+                x:Name="ImieEntry"
+                BackgroundColor="Blue"
+                TextColor="Aqua"/>
+            <Entry
+                Placeholder="E-Mail"
+                Keyboard="Email"
+                x:Name="EmailEntry"
+                BackgroundColor="DarkBlue"
+                TextColor="Aqua"/>
+            <Entry
+                Placeholder="Hasło"
+                IsPassword="True"
+                x:Name="HasloEntry"
+                BackgroundColor="Blue"
+                TextColor="Aqua"/>
+            <Button
+                Text="Zarejestruj się"
+                x:Name="ZarejestrujButton"
+                BackgroundColor="DarkBlue"
+                BorderColor="Aqua"
+                TextColor="Aqua"
+                FontAttributes="Bold"
+                BorderWidth="2"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
