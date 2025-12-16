@@ -3,10 +3,124 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp13.NewPage1"
              Title="MAUI 16.3">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ScrollView>
+    <HorizontalStackLayout>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            WidthRequest="1000">
+            <Border
+                    Stroke="Black"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 50,50,50,50"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    >
+                <Image
+                        Source="profilowe_basic.png"
+                        HeightRequest="100"
+                        WidthRequest="100"/>
+            </Border>
+            <Label
+                Text="Dane Osobowe"
+                Style="{StaticResource Headline}"
+                FontAttributes="Bold"
+                SemanticProperties.HeadingLevel="Level2"/>
+            <Entry
+                Placeholder="Wpisz Imię"
+                x:Name="ImieEntry"
+                BackgroundColor="White"
+                TextColor="Black"/>
+            <Entry
+                Placeholder="Wpisz Nazwisko"
+                x:Name="NazwiskoEntry"
+                BackgroundColor="White"
+                TextColor="Black"/>
+            <Entry
+                Placeholder="E-Mail"
+                Keyboard="Email"
+                x:Name="EmailEntry" 
+                BackgroundColor="White"
+                TextColor="Black"/>
+            <Entry
+                Placeholder="Numer Telefonu"
+                Keyboard="Telephone"
+                x:Name="TelefonEntry"
+                BackgroundColor="White"
+                TextColor="Black"/>
+            <HorizontalStackLayout HorizontalOptions="Center">
+            <Button
+                Text="Zapisz zmiany"
+                x:Name="ZapiszButton"
+                BackgroundColor="LightGray"
+                BorderColor="Black"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BorderWidth="2"
+                WidthRequest="300"
+                Padding="10"/>
+            <Button
+                Text="Anuluj"
+                x:Name="AnulujButton"
+                BackgroundColor="LightGray"
+                BorderColor="Black"
+                TextColor="Black"
+                FontAttributes="Bold"
+                BorderWidth="2"
+                WidthRequest="300"
+                Padding="10"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Label
+                     Text="Ustawienia"
+                     FontAttributes="Bold"
+                     Style="{StaticResource Headline}"
+                     SemanticProperties.HeadingLevel="Level2"/>
+                <HorizontalStackLayout
+                   Padding="30,0"
+                   Spacing="25"
+                    HorizontalOptions="Center">
+                    <Label
+                        Text="Powiadomienia Email"
+                        VerticalOptions="Center"/>
+                    <Switch
+                    IsToggled="False"
+                    x:Name="EmailSwitch"
+                    HorizontalOptions="Center"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                   Padding="30,0"
+                   Spacing="25"
+                    HorizontalOptions="Center">
+                    <Label
+                        Text="Powiadomienia Push"
+                        VerticalOptions="Center"/>
+                    <Switch
+                        IsToggled="False"
+                        x:Name="PushSwitch"
+                        HorizontalOptions="Center"/>    
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                       Padding="30,0"
+                       Spacing="25"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Tryb Ciemny"
+                            x:Name="DarkModeLabel"
+                            VerticalOptions="Center"/>
+                        <Switch
+                            x:Name="DarkModeSwitch"
+                            IsToggled="True"
+                            Toggled="DarkMode"
+                            HorizontalOptions="Center"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+    </HorizontalStackLayout>
+    </ScrollView>
+
 </ContentPage>

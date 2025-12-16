@@ -6,4 +6,11 @@ public partial class NewPage1 : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void DarkMode(object sender, ToggledEventArgs e)
+    {
+        Application.Current.UserAppTheme = e.Value
+        ? AppTheme.Dark
+        : AppTheme.Light;
+    }
 }
