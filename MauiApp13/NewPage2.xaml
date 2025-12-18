@@ -2,21 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp13.NewPage2"
-             Title="NewPage2">
+             Title="MAUI 16.4">
     <VerticalStackLayout HorizontalOptions="Center">
         <Label 
-            Text="Kalkulator"
+            Text="Kalkulator Rachunków"
             FontAttributes="Bold"
             FontSize="30"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Grid RowDefinitions="100,100" ColumnDefinitions="100,100" ColumnSpacing="10" RowSpacing="10" >
-            <Label Text="Rachunek:" Grid.Column="0" BackgroundColor="Red"/>
-            <Entry TextColor="Black" Placeholder="Rachunek" Grid.Column="1" BackgroundColor="Yellow"/>
-            <Slider Minimum="0" Maximum="100" Grid.Row="1" Grid.Column="0" BackgroundColor="Green"/>
-            <Label Text="Row1 Col1" Grid.Row="1" Grid.Column="1" BackgroundColor="Blue"/>
-
-
-        </Grid>
+        <Border Stroke="White" StrokeThickness="3">
+        <Grid RowDefinitions="75,75,75,75" ColumnDefinitions="200,200,200" ColumnSpacing="10" RowSpacing="10" BackgroundColor="Black" Padding="15">
+            <Label TextColor="Black" Text="Rachunek:" Grid.Column="0" BackgroundColor="GreenYellow" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Entry x:Name="RachunekEntry" Keyboard="Numeric" TextColor="Black" Placeholder="...." Grid.Column="0" Grid.Row="1" BackgroundColor="GreenYellow"/>
+            <Label Text="Wybierz Procent:" Grid.Row="0" Grid.Column="1" BackgroundColor="Blue" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" Padding="20"/>
+            <Slider x:Name="Slider1" Minimum="0" Maximum="30" Grid.Row="1" Grid.Column="1" BackgroundColor="Blue" VerticalOptions="Center"/>
+            <Label Text="{Binding Source={x:Reference Slider1}, Path=Value}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="End" InputTransparent="True" Padding="20"/>
+            <Stepper ValueChanged="Stepper1_ValueChanged" x:Name="Stepper1" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Increment="1"  BackgroundColor="Orange" />
+            <Label TextColor="Black" x:Name="OsobyLabel" Text="Liczba Osób" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Orange"/>
+            <Label x:Name="NapiwekLabel" Text="Kwota Napiwku:" Grid.Row="2" Grid.Column="0" BackgroundColor="Firebrick" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="SumaLabel" Text="Suma do zapłaty:" Grid.Row="2" Grid.Column="1" BackgroundColor="Firebrick" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="NaOsobeLabel" Text="Kwota na osobę:" Grid.Row="2" Grid.Column="2" BackgroundColor="Firebrick" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Button x:Name="ObliczButton" Text="Oblicz" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Button x:Name="WyczyscButton" Text="Wyczyść" Grid.Row="3" Grid.Column="2"/>
+            </Grid>
+        </Border>
     </VerticalStackLayout>
 </ContentPage>
